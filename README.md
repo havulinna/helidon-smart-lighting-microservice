@@ -24,7 +24,7 @@ server:
 
 # Details of the Hue bridge in your local network:
 hue.bridge:
-  host: 192.168.100.100
+  host: HUE_BRIDGE_IP_HERE
   token: HUE_BRIDGE_API_TOKEN_HERE
 
 # Mappings of custom light aliases to Hue bridge ids:
