@@ -65,14 +65,14 @@ After light aliases are mapped to Hue bridge ids and the application is started,
 
 ```
 $ curl -s -X GET http://localhost:8080/lights/kitchen/on
-success
+{"success":true}
 
 $ curl -s -X GET http://localhost:8080/lights/kitchen/off
-success
+{"success":true}
 
 $ curl -s -X GET http://localhost:8080/lights/office/on
-success
+{"success":true}
 
 $ curl -s -X GET http://localhost:8080/lights/office/off
-success
+{"success":true}
 ```

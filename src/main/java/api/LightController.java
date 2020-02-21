@@ -2,14 +2,17 @@ package api;
 
 import java.util.function.Supplier;
 
+import javax.json.Json;
+import javax.json.JsonObject;
+
 import io.helidon.config.Config;
 import io.helidon.webserver.NotFoundException;
 import io.helidon.webserver.ServerRequest;
 import io.helidon.webserver.ServerResponse;
 
 public class LightController {
-    private static final String SUCCESS_MSG = "success";
-    private static final String ERROR_MSG = "error";
+    private static final JsonObject SUCCESS_JSON = Json.createObjectBuilder().add("success", true).build();
+    private static final JsonObject ERROR_JSON = Json.createObjectBuilder().add("success", false).build();
     private static final Supplier<NotFoundException> LIGHT_NOT_FOUND = () -> new NotFoundException("Light not found");
 
     private Config config;
@@ -22,14 +25,14 @@ public class LightController {
         SmartLight light = getLight(req);
 
         boolean success = light.on();
-        res.send(success ? SUCCESS_MSG : ERROR_MSG);
+        res.send((success ? SUCCESS_JSON : ERROR_JSON).toString());
     }
 
     public void turnOff(ServerRequest req, ServerResponse res) {
         SmartLight light = getLight(req);
 
         boolean success = light.off();
-        res.send(success ? SUCCESS_MSG : ERROR_MSG);
+        res.send((success ? SUCCESS_JSON : ERROR_JSON).toString());
     }
 
     private SmartLight getLight(ServerRequest req) {
