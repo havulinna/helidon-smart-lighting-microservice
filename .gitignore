@@ -1,0 +1,10 @@
+.dockerignore
+.dockerignore
+.classpath
+target
+.settings/
+src/main/resources/application.yaml
+.project
+Dockerfile
+Dockerfile.native
+app.yaml
