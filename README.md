@@ -50,9 +50,9 @@ public static void main(final String[] args) throws IOException {
 
     LightController lights = new LightController(config);
 
-    Routing routes = Routing.builder() //
-            .get("/lights/{alias}/on", lights::turnOn) //
-            .get("/lights/{alias}/off", lights::turnOff) //
+    Routing routes = Routing.builder()
+            .get("/lights/{alias}/on", lights::turnOn)
+            .get("/lights/{alias}/off", lights::turnOff)
             .build();
 
     WebServer.create(serverConfig, routes).start();
