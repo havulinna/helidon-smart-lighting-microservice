@@ -8,6 +8,10 @@ This project is an exercise application written for learning how to use [Helidon
 
 The application provides a REST API for controlling Philips Hue lights and is based on the [Helidon Quickstart SE Example](https://github.com/oracle/helidon/tree/master/examples/quickstarts/helidon-quickstart-se).
 
+## Demo
+
+![Usage demo: turn table lamp on and off with curl](img/helidon-light-automation.gif)
+
 ## Configuration
 
 All configuration, including the Hue Bridge host and token as well as mappings between light aliases and ids is done in the application.yaml file.
@@ -32,6 +36,7 @@ lights:
   office.id: 1
   livingroom.id: 2
   kitchen.id: 3
+  # add other lights here
 ```
 
 You will need to fill in your Hue bridge IP and access token (username) in the properties. Instructions on generating the access token can be found at https://developers.meethue.com/develop/get-started-2/.
