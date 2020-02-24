@@ -66,7 +66,7 @@ public static void main(final String[] args) throws IOException {
 
 ## Usage
 
-After light aliases are mapped to Hue bridge ids and the application is started, you can use it for switching the lights on and off. Calls to the URLs can be made using the browser, a custom application or, for example, curl:  
+After light aliases are mapped to Hue bridge ids and the application is started, you can use it for switching the lights on and off. Calls to the URLs can be made using the browser, a custom frontend or even curl:  
 
 ```
 $ curl -s -X GET http://localhost:8080/lights/kitchen/on
